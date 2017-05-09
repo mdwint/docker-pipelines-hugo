@@ -9,11 +9,11 @@ RUN apk add --update --no-cache \
   python \
   py-pip \
   wget \
-  && pip install -U awscli
+  && pip install -U awscli s3-site-cache-optimizer
 
 # Install hugo.
-ARG HUGO_VERSION=0.17
-ARG HUGO_SHA256=f1467e204cc469b9ca6f17c0dc4da4a620643b6d9a50cb7dce2508aaf8fbc1ea
+ARG HUGO_VERSION=0.18.1
+ARG HUGO_SHA256=cb462f41ff9620df89f69b85ccdea48cd789490bbab7a17d9c349dae76490add
 
 # Rember sha256sum (and md5sum) expect 2 spaces in front of the filename on alpine...
 RUN curl -Ls https://github.com/spf13/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz \
