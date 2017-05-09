@@ -1,4 +1,4 @@
-FROM alpine:3.4
+FROM mhart/alpine-node:4
 MAINTAINER Karel Bemelmans <mail@karelbemelmans.com>
 
 # Install packages needed to build
