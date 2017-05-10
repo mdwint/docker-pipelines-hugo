@@ -16,9 +16,6 @@ RUN apk add --update --no-cache \
 # Configure boto
 COPY boto.cfg /etc/
 
-# Install gulp
-RUN sudo npm install -g gulp --no-progress
-
 # Install hugo
 ARG HUGO_VERSION=0.18.1
 ARG HUGO_SHA256=cb462f41ff9620df89f69b85ccdea48cd789490bbab7a17d9c349dae76490add
