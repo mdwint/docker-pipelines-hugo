@@ -16,7 +16,10 @@ RUN apk add --update --no-cache \
 # Configure boto
 COPY boto.cfg /etc/
 
-# Install hugo.
+# Install gulp
+RUN sudo npm install -g gulp --no-progress
+
+# Install hugo
 ARG HUGO_VERSION=0.18.1
 ARG HUGO_SHA256=cb462f41ff9620df89f69b85ccdea48cd789490bbab7a17d9c349dae76490add
 
@@ -26,4 +29,4 @@ RUN curl -Ls https://github.com/spf13/hugo/releases/download/v${HUGO_VERSION}/hu
   && echo "${HUGO_SHA256}  /tmp/hugo.tar.gz" | sha256sum -c - \
   && tar xf /tmp/hugo.tar.gz -C /tmp \
   && mv /tmp/hugo_${HUGO_VERSION}_linux_amd64/hugo_${HUGO_VERSION}_linux_amd64 /usr/bin/hugo \
-  && rm -rf /tmp/hugo* \
+  && rm -rf /tmp/hugo*
