@@ -13,9 +13,6 @@ RUN apk add --update --no-cache \
   wget \
   && pip install -U awscli s3-site-cache-optimizer
 
-# Install node-sass
-RUN npm install -g node-sass && npm rebuild node-sass
-
 # Configure boto
 COPY boto.cfg /etc/
 
