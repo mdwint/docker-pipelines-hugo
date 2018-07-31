@@ -27,3 +27,6 @@ RUN curl -Ls https://github.com/spf13/hugo/releases/download/v${HUGO_VERSION}/hu
   && tar xf /tmp/hugo.tar.gz -C /tmp \
   && mv /tmp/hugo_${HUGO_VERSION}_linux_amd64/hugo_${HUGO_VERSION}_linux_amd64 /usr/bin/hugo \
   && rm -rf /tmp/hugo*
+
+# Install yarn
+RUN npm install -g yarn
